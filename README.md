@@ -1,2 +1,2 @@
-# problems
-Personal archive for solutions to programming problems from Kattis, Project Euler, etc.
+# Programming Problems and Coding Challenges
+Personal archive for solutions to problems from Kattis, Project Euler, etc.

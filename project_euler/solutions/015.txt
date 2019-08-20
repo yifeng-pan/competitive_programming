@@ -1,0 +1,4 @@
+https://projecteuler.net/problem=15
+Solution: 137846528820
+
+40 choose 20 = 137846528820

@@ -1,0 +1,9 @@
+--https://open.kattis.com/problems/<>
+
+solve :: [Int] -> [Int]
+solve xs = xs
+
+readInput = (map read) . words
+writeOutput = unlines . (map show)
+
+main = interact (writeOutput . solve . readInput)

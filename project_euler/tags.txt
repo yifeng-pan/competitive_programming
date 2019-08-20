@@ -1,0 +1,19 @@
+1: multiples
+2: fibonacci numbers
+3: primes, prime factors
+4: palindrome numbers
+5: smallest multiple
+6: triangular numbers, pyramid numbers
+7: primes, nth prime
+8: file, largest product
+9: pythagorean triplets
+10: primes, sum of primes
+11: file, grid, largest product
+12: triangular numbers, divisors
+14: collatz sequence
+15: counting, combinations
+16: sum digits
+20: factorial, sum digits
+21: amicable numbers, proper divisors
+23: proper divisors, perfect numbers, deficient/abundant numbers
+101: matrix, polynomial interpolation
