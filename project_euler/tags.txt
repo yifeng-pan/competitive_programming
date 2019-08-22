@@ -10,10 +10,12 @@
 10: primes, sum of primes
 11: file, grid, largest product
 12: triangular numbers, divisors
+13: sum, big numbers
 14: collatz sequence
 15: counting, combinations
 16: sum digits
 20: factorial, sum digits
 21: amicable numbers, proper divisors
 23: proper divisors, perfect numbers, deficient/abundant numbers
+27: primes, polynomial
 101: matrix, polynomial interpolation
