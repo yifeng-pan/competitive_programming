@@ -5,17 +5,13 @@ import Data.List
 toInt :: Double -> Int
 toInt x = truncate x
 
---Looks trash
-toDouble :: Int -> Double
-toDouble x = (fromInteger . toInteger) x :: Double
-
 sum_logf :: Int -> Int -> Double -> Int
 sum_logf l n slnf
     | l <= (toInt slnf) = n - 1 --watch for off-by-one error
     | otherwise = sum_logf l n' slnf'
     where
         n' = n + 1
-        slnf' = slnf + (logBase 10 (toDouble (n + 1)))
+        slnf' = slnf + (logBase 10 (fromIntegral (n + 1)))
 
 log_approach :: Int -> Int
 log_approach l = sum_logf l 1 0
