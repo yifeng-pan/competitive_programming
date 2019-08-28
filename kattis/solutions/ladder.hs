@@ -5,6 +5,6 @@ solve :: Int -> Int -> Int
 solve h v = ceiling ((fromIntegral h) / (sin ((fromIntegral v) * pi / 180)))
 
 main = do
-    h <- readLn
-    v <- readLn
-    print (solve h v)
+    input <- getLine
+    let hv = map read (words input)
+    print (solve (hv!!0) (hv!!1)) 
