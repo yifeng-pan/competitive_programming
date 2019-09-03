@@ -2,12 +2,12 @@
 https://open.kattis.com/problems/pikemaneasy
 */
 
-// Overflow
-// Likely something to do with the % operator not working on large numbers.
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cmath>
+
+long long int mod = pow(10, 9) + 7;
 
 int main(){
 	int N, T;
@@ -15,32 +15,31 @@ int main(){
 	int A, B, C, t0;
 	std::cin >> A >> B >> C >> t0;
 
-	std::vector<int> times;
+	std::vector<long long int> times;
 	times.push_back(t0);
 	for(int i = 1; i < N; ++i){
-		times.push_back(((A * times[i - 1] + B) % C) + 1);
+		long long int n = A;
+		n *= times[i - 1];
+		n += B;
+		n %= C;
+		++n;
+		times.push_back(n);
 	}
 
 	std::sort(times.begin(), times.end());
 
 	int time = 0;
 	int solved = 0;
-	while(time <= T && solved < N){
+	while(time + times[solved] <= T && solved < N){
 		time += times[solved];
 		++solved;
 	}
 	
-	// Trying to prevent overflow
-	// doesn't owrk
 	long long int mod_penalty = 0;
 	for(int i = 0; i < solved; ++i){
 		for(int j = 0; j < solved - i; ++j){
 			mod_penalty += times[i];
-			mod_penalty %= 10^9 + 7;
-			if(mod_penalty < 0){
-				std::cout << "overflow";
-				return 1;
-			}
+			mod_penalty %= mod;
 		}
 	}
 
