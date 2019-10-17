@@ -1,0 +1,45 @@
+Units are in kg, km, s
+Assuming Mars and the satellite are perfect spheres
+
+We know
+Radius of Mars: 3389.5
+Density of Gold: 19.3 * 10^12 kg/km^3
+Initial radius of the two objects: 1748 + 3389.5 
+Initial velocity of Satellite: 7.003687
+
+Let the position and velocity of Mars be constant at <0,0>
+
+Now
+velocity and position of the satellite at t = 0
+v(0) = <0 , 7.003687> 
+p(0) = <1748 + 3389.5 , 0> 
+
+radius:
+r(t) = |p(t)| 
+
+gravational acceleration of the satellite
+g_s(t) = G (mass of Mars) / r(t)^2
+
+gravational acceleration of Mars
+g_m(t) = G (mass of satellite) / r(t)^2
+
+acceleration vector of the satellite
+a_s(t) = - p(t) / r(t) * g_s(r)
+
+acceleration of Mars
+a_m(t) = p(t) / r(t) * g_m(r)
+
+If Mars is fixed at <0,0>, the acceleration vector becomes
+a(t) = a_s(t) - a_m(t)
+a(t) = -p(t) / r(t) * (g_s(r) + g_m(r))
+a(t) = -p(t) / r(t)^3 * G (mass of Mars + mass of satellite)
+
+For small a
+v(t+a) \approx v(t) + a(t) * a
+p(t+a) \approx p(t) + v(t) * a
+
+Mass of the satellite = r^3 * 4 / 3 * pi * Density of Gold
+
+According to "two_body.cpp":
+If the satellite is a gold sphere with r = 1748km
+the velocity would still be greater then the escape velocity.
