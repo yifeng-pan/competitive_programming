@@ -1,13 +1,13 @@
-#Problem from Discord:
-#A card collection has 30 unique cards.
-#The company sells packs that contains 2 cards each (1/30 chance for each card).
-#Nav wants to collect all. 
-#What is the expected number of packs for Nav to collect all cards?
-#What is the sd?
+# Problem:
+# A card collection has 30 unique cards.
+# The company sells packs that contains 2 cards each (1/30 chance for each card).
+# Nav wants to collect all. 
+# What is the expected number of packs for Nav to collect all cards?
+# What is the sd?
 
-#An approximation formula for the mean
-#\mu \approx \frac{\sum_{k=1}^\infty {k (1-(29/30)^k)^{29}(29/30)^{k-1}} + 0.5}{2} \approx 60.1805
-#min of some samples of a geometric distribution
+# An approximation formula for the mean
+# \mu \approx \frac{\sum_{k=1}^\infty {k (1-(29/30)^k)^{29}(29/30)^{k-1}} + 0.5}{2} \approx 60.1805
+# min of some samples of a geometric distribution
 
 x = c()
 n = 10 * 1000
