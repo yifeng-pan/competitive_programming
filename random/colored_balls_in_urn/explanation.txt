@@ -1,0 +1,32 @@
+Problem described in "dp.cpp".
+
+Problem source:
+/sci/thread/11066630
+/pol/thread/230090214
+
+Let $r,b$ be the number of red/blue balls in the urn, and $n = r+b$ for total balls.
+Let $p_r$ be the probability of discarding the red ball given $r,b$ balls in the urn.
+So:
+\begin{align*}
+  p_r &= \frac{r}{n} + \frac{b}{n}\frac{r}{n} \text{ (discard red)}\\
+  1 - p_r = p_b &= \frac{b}{n}\frac{b}{n} \text{ (discard blue)} \\ 
+\end{align*}
+As:
+\begin{align*}
+  \frac{r}{n} &= P(\text{choose red $\to$ discard red}) \\
+  \frac{b}{n}\frac{r}{n} &= P(\text{choose blue $\to$ replace $\to$ choose red $\to$ discard red}) \\
+  \frac{b}{n}\frac{b}{n} &= P(\text{choose blue $\to$ replace $\to$ choose blue $\to$ discard blue})
+\end{align*}
+Now, let $\vectorvalue{r,b}$ be the probability of reaching $1$ red and $0$ blue balls, where
+\begin{align*}
+  \vectorvalue{r,b} = 
+  \begin{cases}
+    0 &\text{ for $r = 0, b = 1$}\\
+    1 &\text{ for $r = 1, b = 0$}\\
+    p_r\vectorvalue{r - 1, b} + p_b\vectorvalue{r, b-1} &\text{ for $r \geq 1, b \geq 1$}
+  \end{cases}
+\end{align*}
+
+"dp.cpp" returns $dp(80,20) \approx 3.8095\%$
+
+The solution is close to $\frac{4}{105}$ with $2.4\times 10^{-17}$ difference.
