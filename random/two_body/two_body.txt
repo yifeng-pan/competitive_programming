@@ -1,3 +1,5 @@
+Problem described in "two_body.cpp".
+
 Units are in kg, km, s
 Assuming Mars and the satellite are perfect spheres
 
@@ -15,7 +17,7 @@ v(0) = <0 , 7.003687>
 p(0) = <1748 + 3389.5 , 0> 
 
 radius:
-r(t) = |p(t)| 
+r(t) = |p(t)|
 
 gravational acceleration of the satellite
 g_s(t) = G (mass of Mars) / r(t)^2
@@ -43,3 +45,5 @@ Mass of the satellite = r^3 * 4 / 3 * pi * Density of Gold
 According to "two_body.cpp":
 If the satellite is a gold sphere with r = 1748km
 the velocity would still be greater then the escape velocity.
+
+This solution might be wrong.
