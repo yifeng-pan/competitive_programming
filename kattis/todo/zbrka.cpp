@@ -12,20 +12,23 @@ How many ways are there to
 	0 1 2
 	0 1 2 3
 	0 1 2 3 4
-	0 1 2 3 4 .. n
+	...
+	0 1 2 3 4 ... n
 */
 
-// not fast enough, need better algorithm
+// Time exceeded error
+// Array error?, Inf loop?
+// Try rewriting with vectors
 
 #include <iostream>
 #include <cmath>
 
-long long int mod = pow(10, 9) + 7;
+int mod = pow(10, 9) + 7;
 
-long long int dp(int N, int C){
+int dp(int N, int C){
 	--N; // offset for indexing
 
-	long long int confusions[N + 1][C + 1]; // row is upto N, col is ways to sum confusion from the first N rows
+	int confusions[N + 1][C + 1]; // row is upto N, col is ways to sum confusion from the first N rows
 	// Both offset by one due to indexing
 
 	for(int c = 1; c <= C; ++c) // base case for n = 0
@@ -37,7 +40,7 @@ long long int dp(int N, int C){
 	for(int n = 1; n <= N; ++n){
 		for(int c = 1; c <= C; ++c){
 
-			long long int sum = 0;
+			int sum = 0;
 
 			if(c <= n){
 				int i = 0;
@@ -54,7 +57,6 @@ long long int dp(int N, int C){
 			}
 
 			confusions[n][c] = sum;
-
 		}
 	}
 
