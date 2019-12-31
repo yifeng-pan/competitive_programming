@@ -18,4 +18,5 @@
 21: amicable numbers, proper divisors
 23: proper divisors, perfect numbers, deficient/abundant numbers
 27: primes, polynomial
+68: permutation
 101: matrix, polynomial interpolation
