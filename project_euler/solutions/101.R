@@ -25,13 +25,13 @@ FITs = constant_term
 for (i in c(2:10)){
   m = poly_matrix(i, fx)
   m = rref(m)
-  
+
   poly = m[,ncol(m)]
   gx = 0
   for(j in c(1:nrow(m))){
     gx = gx + poly[j]*x^(j-1)
   }
-  
+
   #diff is a vector where g(x) and f(x) differs.
   #if the for loop was set to c(2:11) on i == 11, diff would be null
   #as g(x) == f(x)
