@@ -1,5 +1,9 @@
 # https://acpc20d1.kattis.com/problems/acpc20.bestinvesting
 
+# I fixed the edge case.
+# Did'nt check if the regular cases stil worked, it sholud.
+# I cant submit it to verify cus the contest was over.
+
 import math
 import sys
 
@@ -13,9 +17,10 @@ def update(C, B, R):
         B[x] = (C[x] + B[x-1])*R
     return
 
-rydw = [int(n) for n in input().split()]
+# rydw = [int(n) for n in input().split()]
 # rydw = [7,100,1,100000]
 # rydw = [100,10,1,200]
+rydw = [100, 10, 200, 200]
 
 r = rydw[0]
 y = rydw[1]
@@ -51,4 +56,10 @@ while B[Y-1] > 0:
     # print(C)
     # print(B)
 
+if B[Y-1] < 0:
+    C[0] = required
+    update(C,B,R)
+
 print('%.20f' % -sum(C))
+print(C)
+print(B)
